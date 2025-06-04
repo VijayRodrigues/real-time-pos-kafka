@@ -29,7 +29,7 @@ POS_Simulator_Microservice/
 ├── README.md               # Project documentation
 │
 └── __pycache__/            # Python bytecode cache directory (auto-generated)
-
+```
 
 ---
 
