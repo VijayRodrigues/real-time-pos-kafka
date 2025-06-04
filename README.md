@@ -135,7 +135,8 @@ You can run a simple query like:
 SELECT * FROM transactions;
 ```
 
-![Uploading postgres_output.gif…]()
+![postgres_output](https://github.com/user-attachments/assets/1052d661-9829-4bbc-8b03-853187f65bba)
+
 
 This should show the latest transaction records being inserted in real-time.
 
