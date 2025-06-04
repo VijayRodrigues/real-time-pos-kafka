@@ -18,7 +18,17 @@ This project simulates real-time Point-of-Sale (POS) transactions using **FastAP
 
 ## 📁 Project Structure
 
-
+```plaintext
+POS_Simulator_Microservice/
+│
+├── main.py                 # FastAPI producer script to send transaction data to Kafka
+├── consumer.py             # Kafka consumer script to read from topic and write to PostgreSQL
+├── requirements.txt        # Python dependencies for the project
+├── docker-compose.yml      # Docker config file for Kafka and Zookeeper
+├── .env                    # (Optional) Environment variables (e.g., DB connection details)
+├── README.md               # Project documentation
+│
+└── __pycache__/            # Python bytecode cache directory (auto-generated)
 
 
 ---
