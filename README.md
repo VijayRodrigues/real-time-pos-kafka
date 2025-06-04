@@ -173,7 +173,7 @@ This project includes a simple yet effective real-time dashboard built using **S
    streamlit run app.py
    ```
 
-
+---
 The dashboard will open in your browser and update in real time as new transactions are inserted into the database.
 
 ![streamlit_dashboard](https://github.com/user-attachments/assets/407371e3-4923-4d69-b8a9-d48940587dbe)
