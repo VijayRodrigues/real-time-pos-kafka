@@ -34,8 +34,22 @@ This project simulates real-time Point-of-Sale (POS) transactions using **FastAP
 
 
 
+## 📦 Project Overview
 
-## 🐳 Kafka Setup (via Docker)
+This project simulates a **real-time Point-of-Sale (POS) transaction system** using **Apache Kafka**, **FastAPI**, and **PostgreSQL**.
+
+The goal is to mimic a real-world retail environment where transactions — specifically **gaming laptop sales** — are generated live and streamed through Kafka for downstream processing and storage.
+
+- `main.py` uses **FastAPI** and **Faker** to generate realistic sales data, including product info, quantity, prices, and timestamps. This data is continuously sent to a Kafka topic.
+- `consumer.py` acts as the Kafka **consumer**, reading each transaction from the topic and inserting it into a **PostgreSQL** database using `psycopg2`.
+- The setup is modular, real-time, and container-friendly. Kafka and Zookeeper are managed through Docker, ensuring portability and ease of setup.
+
+This system is ideal as a **proof-of-concept (POC)** for real-time data pipelines, ETL workflows, or streaming dashboards in a retail or transactional analytics context.
+
+---
+
+
+## 🐳 Kafka Setup (via Docker) and start
 
 To set up Kafka and Zookeeper using Docker:
 
@@ -68,3 +82,61 @@ To set up Kafka and Zookeeper using Docker:
 
 
    ---
+## 🚀 Running the Scripts
+
+Once Kafka and Zookeeper are running via Docker, start the producer and consumer applications as follows:
+
+### 🟢 1. Start the FastAPI Producer (`main.py`)
+
+In this CMD window (`main-script`), run the FastAPI app which generates and sends transaction data to Kafka:
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+This will continuously emit synthetic POS transaction events every 2 seconds (e.g., sales of gaming laptops), which are sent to the `pos-transactions` Kafka topic.
+
+
+![main](https://github.com/user-attachments/assets/8317a5c2-76fa-4a64-a042-b93c1e99c807)
+
+   ---
+
+
+### 🔵 2. Start the Kafka Consumer (`consumer.py`)
+
+In this CMD window (`consumer-script`), run the Kafka consumer which listens to the topic and inserts the data into your PostgreSQL database:
+
+```bash
+python consumer.py
+```
+
+![consumer](https://github.com/user-attachments/assets/43679fa5-85bd-4e5e-81c8-11066e895b12)
+
+
+This will consume the real-time transactions from Kafka and write them into the `poc_transactions` database on `localhost:5432`, under the appropriate schema.
+
+
+   ---
+
+### 🟡 3. Verify Data in PostgreSQL
+
+Now that the data is being inserted into PostgreSQL, you can verify it directly by querying your database.
+
+Assuming you're using `pgAdmin` or any PostgreSQL client, connect to the following configuration:
+
+- **Host:** `localhost`
+- **Port:** `5432`
+- **Database:** `poc_transactions`
+- **Password:** `******` (as per your local setup)
+
+You can run a simple query like:
+
+```sql
+SELECT * FROM transactions;
+```
+
+![Uploading postgres_output.gif…]()
+
+This should show the latest transaction records being inserted in real-time.
+
+---
