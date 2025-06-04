@@ -4,3 +4,7 @@ kafka-python
 faker
 psycopg2-binary
 email-validator
+streamlit
+plotly
+pandas
+psycopg2
