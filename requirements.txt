@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+kafka-python
+faker
+psycopg2-binary
+email-validator
