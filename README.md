@@ -62,3 +62,9 @@ To set up Kafka and Zookeeper using Docker:
 6. **(Optional) Create a Kafka Topic**  
    If your topic isn’t created yet:  
    &nbsp;&nbsp;&nbsp;&nbsp;`docker exec -it kafka-docker-kafka-1 kafka-topics --create --topic pos-transactions --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1`
+
+
+![docker_start](https://github.com/user-attachments/assets/e1b4ef85-8d2f-4ec7-9231-d4ed107658d1)
+
+
+   ---
