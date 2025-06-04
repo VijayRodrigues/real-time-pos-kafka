@@ -151,3 +151,32 @@ SELECT * FROM transactions;
 This should show the latest transaction records being inserted in real-time.
 
 ---
+
+### 🖥️ Streamlit Dashboard (Live Monitoring)
+
+This project includes a simple yet effective real-time dashboard built using **Streamlit**, which connects directly to the PostgreSQL database and displays the latest POS transactions.
+
+#### Features:
+- ⏱️ **Auto-refreshing view** every few seconds
+- 🔍 **Filter** by `Product Name` or `Store ID`
+- 📊 Live KPIs: Total Transactions, Revenue, Active Stores
+- 🧾 Data table showing latest 100 transactions
+
+#### To Run the Dashboard:
+1. Make sure your PostgreSQL server is running and Kafka consumer is writing data.
+2. Install Streamlit and dependencies (if not already):
+   ```bash
+   pip install streamlit psycopg2 pandas
+   ```
+3. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
+
+
+The dashboard will open in your browser and update in real time as new transactions are inserted into the database.
+
+![streamlit_dashboard](https://github.com/user-attachments/assets/407371e3-4923-4d69-b8a9-d48940587dbe)
+
+---
+
