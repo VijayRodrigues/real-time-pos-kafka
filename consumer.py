@@ -8,7 +8,7 @@ conn = psycopg2.connect(
     port=5432,
     database="poc_transactions",
     user="postgres",
-    password="Deadpool@212"
+    password="********"
 )
 cursor = conn.cursor()
 
