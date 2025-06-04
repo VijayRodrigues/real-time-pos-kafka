@@ -8,7 +8,7 @@ DB_HOST = "localhost"
 DB_PORT = "5432"
 DB_NAME = "poc_transactions"
 DB_USER = "postgres"
-DB_PASSWORD = "Deadpool@212"
+DB_PASSWORD = "********"
 
 # Connect to PostgreSQL
 @st.cache_resource
